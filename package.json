@@ -1,6 +1,6 @@
 {
   "name": "styled-bootstrap-grid",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "bootstrap grid system using styled components",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,6 +10,8 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
+    "prepare": "npm run build",
+    "prepublish": "npm run build",
     "build": "rm -rf dist/ && npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\"",
@@ -38,7 +40,7 @@
   },
   "homepage": "https://github.com/dragma/styled-bootstrap-grid#readme",
   "peerDependencies": {
-    "react": "^0.14.0 || ^16.0.0-0",
+    "react": "^16.8.6 || ^17.0.0",
     "styled-components": ">=4"
   },
   "devDependencies": {
